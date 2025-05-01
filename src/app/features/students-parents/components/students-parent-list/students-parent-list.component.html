@@ -1,0 +1,50 @@
+<div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          @if (viewMode === 'student') {
+            <th>Parent Name</th>
+            <th>Relationship</th>
+          } @else {
+            <th>Student Name</th>
+            <th>Relationship</th>
+          }
+          <th>Primary Contact</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (relation of relations; track relation.student_id + '-' + relation.parent_id) {
+          <tr>
+            @if (viewMode === 'student') {
+              <td>{{ relation.parent_first_name }} {{ relation.parent_last_name }}</td>
+            } @else {
+              <td>{{ relation.student_first_name }} {{ relation.student_last_name }}</td>
+            }
+            <td>{{ relation.relationship }}</td>
+            <td>
+              @if (relation.is_primary_contact) {
+                <span class="badge bg-success">Yes</span>
+              } @else {
+                <span class="badge bg-secondary">No</span>
+              }
+            </td>
+            <td>
+              <button class="btn btn-sm btn-outline-primary me-2" 
+                      [routerLink]="['/students', relation.student_id, 'parents', relation.parent_id, 'edit']">
+                Edit
+              </button>
+              <button class="btn btn-sm btn-outline-danger" 
+                      (click)="deleteRelation(relation.student_id, relation.parent_id)">
+                Delete
+              </button>
+            </td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="4" class="text-center">No relationships found</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>

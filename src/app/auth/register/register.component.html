@@ -1,0 +1,105 @@
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow">
+        <div class="card-body p-4">
+          <h2 class="card-title text-center mb-4">Inscription</h2>
+          
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <!-- Username -->
+            <div class="mb-3">
+              <label for="username" class="form-label">Nom d'utilisateur</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="username"
+                formControlName="username"
+                [ngClass]="{ 'is-invalid': registerForm.get('username')?.invalid && registerForm.get('username')?.touched }"
+                required>
+              <div class="invalid-feedback" *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched">
+                Un nom d'utilisateur valide est requis
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input 
+                type="email" 
+                class="form-control" 
+                id="email"
+                formControlName="email"
+                [ngClass]="{ 'is-invalid': registerForm.get('email')?.invalid && registerForm.get('email')?.touched }"
+                required>
+              <div class="invalid-feedback" *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+                Veuillez entrer un email valide
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+              <label for="password" class="form-label">Mot de passe</label>
+              <input 
+                type="password" 
+                class="form-control" 
+                id="password"
+                formControlName="password"
+                [ngClass]="{ 'is-invalid': registerForm.get('password')?.invalid && registerForm.get('password')?.touched }"
+                required>
+              <div class="invalid-feedback" *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+                Le mot de passe doit contenir au moins 6 caractères
+              </div>
+            </div>
+
+            <!-- Role -->
+            <div class="mb-3">
+              <label for="role" class="form-label">Rôle</label>
+              <select 
+                class="form-select"
+                id="role"
+                formControlName="role"
+                [ngClass]="{ 'is-invalid': registerForm.get('role')?.invalid && registerForm.get('role')?.touched }">
+                <option value="Student">Étudiant</option>
+                <option value="Teacher">Enseignant</option>
+                <option value="Admin">Administrateur</option>
+              </select>
+            </div>
+
+            <!-- Associated ID -->
+            <div class="mb-3" *ngIf="registerForm.get('role')?.value !== 'Admin'">
+              <label for="associated_id" class="form-label">
+                {{ registerForm.get('role')?.value === 'Student' ? 'ID Étudiant' : 'ID Enseignant' }}
+              </label>
+              <input 
+                type="number" 
+                class="form-control" 
+                id="associated_id"
+                formControlName="associated_id">
+            </div>
+
+            <!-- Messages -->
+            <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+              {{ errorMessage }}
+            </div>
+            <div *ngIf="successMessage" class="alert alert-success mt-3">
+              {{ successMessage }}
+            </div>
+
+            <!-- Submit Button -->
+            <button 
+              type="submit" 
+              class="btn btn-primary w-100 py-2"
+              [disabled]="!registerForm.valid">
+              S'inscrire
+            </button>
+
+            <!-- Login Link -->
+            <div class="text-center mt-3">
+              <p>Déjà un compte ? <a routerLink="/login" class="text-decoration-none">Connectez-vous</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

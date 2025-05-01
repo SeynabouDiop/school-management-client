@@ -1,0 +1,59 @@
+<!-- Hero Section -->
+<section class="login-hero wow animate__animated animate__fadeIn">
+  <div class="container">
+    <h1 class="display-4 fw-bold mb-4 wow animate__animated animate__fadeInDown">Connexion</h1>
+    <p class="lead wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">Accédez à votre espace
+      personnel</p>
+  </div>
+</section>
+
+<!-- Login Form -->
+<section class="py-5">
+  <div class="container">
+    <div class="login-container wow animate__animated animate__fadeInUp">
+      <h2 class="login-title text-center">Connectez-vous</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="username" class="form-label">Nom d'utilisateur</label>
+          <input type="text" class="form-control" id="username" formControlName="username"
+            [ngClass]="{ 'is-invalid': loginForm.get('username')?.invalid && loginForm.get('username')?.touched }"
+            required>
+          <div class="invalid-feedback"
+            *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
+            Veuillez saisir un nom d'utilisateur valide
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Mot de passe</label>
+          <input type="password" class="form-control" id="password" formControlName="password"
+            [ngClass]="{ 'is-invalid': loginForm.get('password')?.invalid && loginForm.get('password')?.touched }"
+            required>
+          <div class="invalid-feedback"
+            *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+            Veuillez saisir un mot de passe
+          </div>
+        </div>
+        <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+          {{ errorMessage }}
+        </div>
+        <button type="submit" 
+        class="btn-login w-100 mt-3"
+        [disabled]="!loginForm.valid">Se connecter</button>
+      </form>
+
+      <div class="login-links">
+        <a href="#">Mot de passe oublié ?</a> | <a routerLink="/register">Créer un compte</a>
+      </div>
+
+      <div class="social-login">
+        <p>Ou connectez-vous avec</p>
+        <div class="social-icons">
+          <a href="#" class="social-icon"><i class="fab fa-google"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,38 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-accueil" id="mainNavbar">
+  <div class="container">
+      <a class="navbar-brand wow animate__animated animate__fadeInLeft" href="index.html">Gestion Scolaire</a>
+      <button class="navbar-toggler border-0 shadow-none rounded-0" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="fa-solid fa-bars-staggered"></span>
+      </button>
+      <div class="collapse navbar-collapse text-center" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+              <li class="nav-item wow animate__animated animate__fadeInDown" data-wow-delay="0.1s">
+                  <a class="nav-link active" routerLink="/dashboard">Tableau de bord</a>
+              </li>
+              <li class="nav-item wow animate__animated animate__fadeInDown" data-wow-delay="0.2s" *ngIf="authService.isLoggedIn()">
+                  <a class="nav-link" routerLink="students">Étudiants</a>
+              </li>
+              <li class="nav-item wow animate__animated animate__fadeInDown" data-wow-delay="0.3s">
+                  <a class="nav-link" routerLink="parents">Parents</a>
+              </li>
+              <li class="nav-item wow animate__animated animate__fadeInDown" data-wow-delay="0.4s" *ngIf="authService.isLoggedIn()">
+                  <span class="navbar-text me-3 text-danger">
+                      Bonjour, {{ authService.getUser()?.username }}
+                    </span>
+              </li>
+              <li class="nav-item wow animate__animated animate__fadeInDown" data-wow-delay="0.5s">
+                  <button class="login-btn" (click)="logout()"><i class="fas fa-sign-in-alt me-1"></i> Déconnexion</button>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
+  <div class="container mt-4">
+    <!-- Contenu conditionnel -->
+    <router-outlet *ngIf="!showStudents"></router-outlet>
+    
+    <app-student-list *ngIf="showStudents"></app-student-list>
+    <!-- etc. pour les autres composants étudiants -->
+  </div>

@@ -1,0 +1,190 @@
+<section class="hero">
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="/video.mp4" type="video/mp4">
+        <!-- Fallback image si video ne charge pas -->
+        <img src="img/fallback.jpg" alt="Background hero">
+    </video>
+    <div class="hero-content">
+        <h1>Bienvenue dans notre Groupe Scolaire</h1>
+        <p>
+            "L'excellence n'est pas un hasard, c'est une habitude." <br>
+            "Construire aujourd'hui, réussir demain." <br>
+            "Un avenir brillant commence ici."
+        </p>
+        <a href="#" class="btn">Call to Action</a>
+    </div>
+</section>
+
+<section class="container section-container">
+    <div class="row align-items-center mt-5">
+        <!-- Colonne Image - version ajustée -->
+        <div class="col-md-6 mb-4 mb-md-0 wow animate__animated animate__fadeInLeft">
+            <div class="img-container" style="max-height: 500px; overflow: hidden; border-radius: 8px;">
+                <img src="/img (2).jpg" alt="Image descriptive" class="img-fluid w-100 h-100 object-fit-cover">
+            </div>
+        </div>
+
+        <!-- Colonne Texte -->
+        <div class="col-md-6 wow animate__animated animate__fadeInRight">
+            <div class="text-content ps-md-5">
+                <h1 class="animate__animated animate__fadeInUp" data-wow-delay="0.2s">Innovation & Pédagogie</h1>
+                <p class="animate__animated animate__fadeInUp" data-wow-delay="0.3s">Éduquer, inspirer, innover.Une
+                    école tournée vers l'avenir.Apprendre autrement, réussir ensemble.</p>
+                <div class="animate__animated animate__fadeInUp" data-wow-delay="0.4s">
+                    <a href="#" class="btn btn-custom mt-3"><i class="fa-solid fa-paper-plane me-2"></i> En
+                        savoir plus
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center mb-5 wow animate__animated animate__fadeInDown">
+                <h2 class="mb-3">Nos differents cours.</h2>
+                <p class="text-muted">Découvrez les témoignages de ceux qui nous ont fait confiance</p>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Carte 1 -->
+            <div class="col-md-6 col-lg-3 mb-4 wow animate__animated animate__fadeInUp">
+                <div class="team-card">
+                    <div class="rounded-img-container wow animate__animated animate__zoomIn" data-wow-delay="0.1s">
+                        <img src="/chimie.jpg" alt="Membre d'équipe">
+                    </div>
+                    <h3>Chimies</h3>
+                    <p>La chimie est la mélodie des éléments.</p>
+                    <a href="#" class="login-btn">En savoir plus</a>
+                </div>
+            </div>
+
+            <!-- Carte 2 -->
+            <div class="col-md-6 col-lg-3 mb-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+                <div class="team-card">
+                    <div class="rounded-img-container wow animate__animated animate__zoomIn" data-wow-delay="0.3s">
+                        <img src="/geographie.jpg" alt="Membre d'équipe">
+                    </div>
+                    <h3>Géographies</h3>
+                    <p>La géographie est la science des lieux, pas des hommes.</p>
+                    <a href="#" class="login-btn">En savoir plus</a>
+                </div>
+            </div>
+
+            <!-- Carte 3 -->
+            <div class="col-md-6 col-lg-3 mb-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+                <div class="team-card">
+                    <div class="rounded-img-container wow animate__animated animate__zoomIn" data-wow-delay="0.5s">
+                        <img src="/physique.jpg" alt="Membre d'équipe">
+                    </div>
+                    <h3>Physiques</h3>
+                    <p>La physique ne résout pas les mystères.</p>
+                    <a href="#" class="login-btn">En savoir plus</a>
+                </div>
+            </div>
+
+            <!-- Carte 4 -->
+            <div class="col-md-6 col-lg-3 mb-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
+                <div class="team-card">
+                    <div class="rounded-img-container wow animate__animated animate__zoomIn" data-wow-delay="0.7s">
+                        <img src="/histoire.jpg" alt="Membre d'équipe">
+                    </div>
+                    <h3>Histoires</h3>
+                    <p>L'Histoire est un grand miroir.</p>
+                    <a href="#" class="login-btn">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonial-section wow animate__animated animate__fadeIn">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center mb-5 wow animate__animated animate__fadeInDown">
+                <h2 class="mb-3">Ce que disent nos clients</h2>
+                <p class="text-muted">Découvrez les témoignages de ceux qui nous ont fait confiance</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <!-- Indicateurs -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0"
+                            class="active"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
+                    </div>
+
+                    <!-- Slides -->
+                    <div class="carousel-inner">
+                        <!-- Témoignage 1 -->
+                        <div class="carousel-item active">
+                            <div class="testimonial-card wow animate__animated animate__zoomIn">
+                                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Client"
+                                    class="testimonial-img">
+                                <p class="testimonial-text">Cette école m’a donné les clés pour réussir dans le
+                                    supérieur. Les méthodes de travail et l’encadrement m’ont permis d’aborder mes
+                                    études avec sérénité. J’y ai aussi rencontré des amis pour la vie !</p>
+                                <h5 class="testimonial-author">Ndeye Astou Dieng</h5>
+                                <p class="testimonial-position">Ancienne élève</p>
+                                <div class="rating mt-3">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Témoignage 2 -->
+                        <div class="carousel-item">
+                            <div class="testimonial-card wow animate__animated animate__zoomIn">
+                                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Client"
+                                    class="testimonial-img">
+                                <p class="testimonial-text">Nous sommes impressionnés par le suivi personnalisé et les
+                                    projets innovants proposés par l’établissement. Notre fils a progressé non seulement
+                                    sur le plan scolaire, mais aussi dans sa confiance en lui.</p>
+                                <h5 class="testimonial-author">Pape Modou Diop</h5>
+                                <p class="testimonial-position">Parent d’un collégien</p>
+                                <div class="rating mt-3">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star-half-alt text-warning"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Témoignage 3 -->
+                        <div class="carousel-item">
+                            <div class="testimonial-card wow animate__animated animate__zoomIn">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client"
+                                    class="testimonial-img">
+                                <p class="testimonial-text">Le soutien des professeurs et l’ambition pédagogique de
+                                    cette école ont permis à notre fille de décrocher son bac avec mention. Au-delà des
+                                    résultats, elle y a acquis une vraie autonomie et des valeurs fortes.</p>
+                                <h5 class="testimonial-author">Émilie Ngom</h5>
+                                <p class="testimonial-position">Maman d’un Élève</p>
+                                <div class="rating mt-3">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

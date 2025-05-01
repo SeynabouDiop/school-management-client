@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --primary-color: #FE1B00;
+    --secondary-color: #FF5733;
+    --tertiary-color: #FF7E5A;
+    --quaternary-color: #FFA082;
+    --quinary-color: #FFC0AA;
+    --senary-color: #FFE0D4;
+    --septenary-color: #FFFFFF;
+    --octonary-color: #292929;
+    --nonary-color: #A2A2A2;
+    --font-primary: "Alfa Slab One", serif;
+    --font-secondary: "Arvo", serif;
+}
+
+
+
+body {
+    background: var(--senary-color);
+    font-family: var(--font-secondary);
+    padding-top: 80px;
+}
+
+
+
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: var(--octonary-color);
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .login-btn {
+        margin-left: 0;
+        margin-top: 10px;
+        display: inline-block;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        height: 70vh;
+        min-height: 400px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 10px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 60vh;
+        min-height: 300px;
+    }
+}
+
+/* Ajustements responsive */
+@media (max-width: 768px) {
+    .img-container {
+        max-height: 350px;
+    }
+
+    .text-content {
+        padding-left: 0 !important;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .img-container {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .social-icons {
+        justify-content: center;
+        margin-top: 15px;
+        gap: 10px;
+    }
+
+    .social-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-control-prev {
+        left: 10px;
+    }
+
+    .carousel-control-next {
+        right: 10px;
+    }
+
+    .testimonial-section {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: var(--octonary-color);
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .login-btn {
+        margin-left: 0;
+        margin-top: 10px;
+        display: inline-block;
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline::after {
+        left: 31px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timeline-item::after {
+        left: 18px;
+    }
+
+    .left,
+    .right {
+        left: 0;
+        text-align: left;
+    }
+
+    .about-hero h1 {
+        font-size: 2.5rem;
+    }
+}

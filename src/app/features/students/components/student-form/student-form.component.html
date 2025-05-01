@@ -1,0 +1,86 @@
+<div class="container mt-4">
+  <h2>{{ isEditMode ? 'Edit' : 'Add' }} Student</h2>
+  
+  <form [formGroup]="studentForm" (ngSubmit)="onSubmit()" *ngIf="!isLoading">
+    <div class="row g-3">
+      <div class="col-md-6">
+        <label for="first_name" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="first_name" formControlName="first_name"
+               [ngClass]="{ 'is-invalid': studentForm.get('first_name')?.invalid && studentForm.get('first_name')?.touched }">
+        <div class="invalid-feedback">First name is required</div>
+      </div>
+      
+      <div class="col-md-6">
+        <label for="last_name" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="last_name" formControlName="last_name"
+               [ngClass]="{ 'is-invalid': studentForm.get('last_name')?.invalid && studentForm.get('last_name')?.touched }">
+        <div class="invalid-feedback">Last name is required</div>
+      </div>
+      
+      <div class="col-md-6">
+        <label for="birth_date" class="form-label">Birth Date</label>
+        <input type="date" class="form-control" id="birth_date" formControlName="birth_date"
+               [ngClass]="{ 'is-invalid': studentForm.get('birth_date')?.invalid && studentForm.get('birth_date')?.touched }">
+        <div class="invalid-feedback">Birth date is required</div>
+      </div>
+      
+      <div class="col-md-6">
+        <label for="gender" class="form-label">Gender</label>
+        <select class="form-select" id="gender" formControlName="gender"
+                [ngClass]="{ 'is-invalid': studentForm.get('gender')?.invalid && studentForm.get('gender')?.touched }">
+          <option value="">Select...</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+        <div class="invalid-feedback">Gender is required</div>
+      </div>
+      
+      <div class="col-12">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" formControlName="email"
+               [ngClass]="{ 'is-invalid': studentForm.get('email')?.invalid && studentForm.get('email')?.touched }">
+        <div class="invalid-feedback">
+          {{ studentForm.get('email')?.errors?.['required'] ? 'Email is required' : 'Please enter a valid email' }}
+        </div>
+      </div>
+      
+      <div class="col-12">
+        <label for="address" class="form-label">Address</label>
+        <input type="text" class="form-control" id="address" formControlName="address">
+      </div>
+      
+      <div class="col-md-6">
+        <label for="phone" class="form-label">Phone</label>
+        <input type="tel" class="form-control" id="phone" formControlName="phone">
+      </div>
+      
+      <div class="col-md-6">
+        <label for="enrollment_date" class="form-label">Enrollment Date</label>
+        <input type="date" class="form-control" id="enrollment_date" formControlName="enrollment_date"
+               [ngClass]="{ 'is-invalid': studentForm.get('enrollment_date')?.invalid && studentForm.get('enrollment_date')?.touched }">
+        <div class="invalid-feedback">Enrollment date is required</div>
+      </div>
+      
+      <div class="col-md-6">
+        <label for="class_id" class="form-label">Class ID</label>
+        <input type="number" class="form-control" id="class_id" formControlName="class_id">
+      </div>
+    </div>
+    
+    <div class="mt-4">
+      <button type="submit" class="btn btn-primary me-2" [disabled]="studentForm.invalid">
+        {{ isEditMode ? 'Update' : 'Save' }}
+      </button>
+      <button type="button" class="btn btn-outline-secondary" routerLink="/students">
+        Cancel
+      </button>
+    </div>
+  </form>
+  
+  <div *ngIf="isLoading" class="text-center mt-4">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</div>
