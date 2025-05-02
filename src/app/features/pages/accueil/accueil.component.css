@@ -66,7 +66,25 @@
     transform: translateY(-3px);
 }
 
+.login-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-left: 15px;
+    border: none;
+}
 
+.login-btn:hover {
+    background: #d31600;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(254, 27, 0, 0.3);
+    color: white;
+}
 
 /* Styles optimisés pour l'image */
 .img-container {
