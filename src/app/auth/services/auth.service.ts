@@ -8,7 +8,7 @@ import { User } from '../../shared/models/user';
 })
 export class AuthService {
 
-  private apiUrl = 'http://localhost:3000/api/auth';
+  private apiUrl = 'https://server-1-l7ab.onrender.com/api/auth';
 
   constructor(private http: HttpClient) { }
 
